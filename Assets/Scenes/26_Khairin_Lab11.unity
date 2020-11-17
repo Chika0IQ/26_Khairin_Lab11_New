@@ -916,7 +916,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   rotatespeed: 0
-  damageRate: 500
+  damageRate: 10
   health: 100
   healthText: {fileID: 1241586716}
   animator: {fileID: 0}

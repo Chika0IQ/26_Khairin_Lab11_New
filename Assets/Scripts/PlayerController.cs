@@ -74,21 +74,21 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-    private void OnTriggerEnter(Collider other) // Trigger on Fire Cube
+    private void OnTriggerStay(Collider other) // Trigger on Fire Cube
     {
         if (other.gameObject.tag == "Fire")
         {
             health -= damageRate * Time.deltaTime;
             healthText.GetComponent<Text>().text = "Health:" + health;
         }
-    }
-
-    private void OnTriggerStay(Collider other) //Health 0, Trigger Death Animation, set Dead to True
-    {
         if (health <= 0)
         {
             animator.SetTrigger("DeadTrigger");
             dead = true;
+        }
+        if (dead == true)
+        {
+            healthText.GetComponent<Text>().text = "Health: 0";
         }
     }
 }
